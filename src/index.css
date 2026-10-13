@@ -1,0 +1,287 @@
+
+@import "tailwindcss";
+/* 
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #e8edfa;
+  background: #0b1120;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top, #182544 0%, #0b1120 55%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+  padding: 55px 0 70px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  font-size: 38px;
+  color: #a5b4fc;
+}
+
+h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+h1 span {
+  color: #818cf8;
+}
+
+.hero > p {
+  color: #9aa9c5;
+  margin: 15px 0 28px;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  max-width: 640px;
+  margin: auto;
+  padding: 6px;
+  background: #111a2b;
+  border: 1px solid #34435f;
+  border-radius: 14px;
+}
+
+.search-form input {
+  flex: 1;
+  width: 0;
+  padding: 13px;
+  border: 0;
+  outline: none;
+  color: white;
+  background: transparent;
+}
+
+.search-form input::placeholder {
+  color: #8290a9;
+}
+
+.search-form button {
+  padding: 12px 25px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  background: linear-gradient(120deg, #6366f1, #4f46e5);
+  cursor: pointer;
+}
+
+.search-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.results-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #a9b6cd;
+  flex-wrap: wrap;
+}
+
+.results-heading p {
+  margin: 0;
+}
+
+.results-heading strong {
+  color: #a5b4fc;
+}
+
+.results-heading span {
+  font-size: 13px;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.user-card {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid #293851;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #121c2d, #0e1727);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 10%);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+  border-color: #6366f1;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #394969;
+}
+
+.user-id {
+  align-self: flex-start;
+  padding: 6px 9px;
+  color: #c7d2fe;
+  background: #222f49;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.user-card h2 {
+  margin: 19px 0 5px;
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+
+.login {
+  margin: 0;
+  color: #818cf8;
+}
+
+.bio {
+  min-height: 44px;
+  margin: 19px 0;
+  color: #bac5d8;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.location {
+  color: #9eacc4;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.location span {
+  margin-right: 8px;
+  color: #a5b4fc;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 23px;
+  padding-top: 15px;
+  border-top: 1px solid #26334a;
+}
+
+.card-footer a {
+  color: #a5b4fc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card-footer a:hover {
+  color: white;
+}
+
+.copy-id {
+  border: 1px solid #35435c;
+  border-radius: 7px;
+  padding: 7px 9px;
+  background: transparent;
+  color: #b8c5dd;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.copy-id:hover {
+  background: #202d45;
+}
+
+.status {
+  text-align: center;
+  color: #b6c2d8;
+}
+
+.error {
+  text-align: center;
+  color: #fca5a5;
+}
+
+@media (max-width: 900px) {
+  .user-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    width: calc(100% - 28px);
+    padding-top: 35px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-icon {
+    font-size: 28px;
+  }
+
+  .user-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .user-card {
+    padding: 20px;
+  }
+
+  .results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+} */
