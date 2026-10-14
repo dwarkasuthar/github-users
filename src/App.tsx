@@ -16,17 +16,15 @@ function ThemeToggle({
       type="button"
       onClick={onToggle}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
-      className={`relative inline-flex h-11 w-20 items-center rounded-full p-1 border transition-all duration-300 cursor-pointer shadow-lg outline-none ${
-        isDark
+      className={`relative inline-flex h-11 w-20 items-center rounded-full p-1 border transition-all duration-300 cursor-pointer shadow-lg outline-none ${isDark
           ? "border-slate-800 bg-[#0f172a] shadow-indigo-950/40 hover:border-slate-700"
           : "border-slate-300 bg-slate-200/90 shadow-slate-300/50 hover:border-slate-400"
-      }`}
+        }`}
     >
       {/* Sun Icon (Light Mode indicator) */}
       <span
-        className={`flex h-9 w-9 items-center justify-center z-10 transition-all duration-300 ${
-          !isDark ? "opacity-100 scale-105" : "opacity-35 hover:opacity-70"
-        }`}
+        className={`flex h-9 w-9 items-center justify-center z-10 transition-all duration-300 ${!isDark ? "opacity-100 scale-105" : "opacity-35 hover:opacity-70"
+          }`}
       >
         <svg
           className="h-5 w-5 text-amber-400"
@@ -51,9 +49,8 @@ function ThemeToggle({
 
       {/* Moon Icon (Dark Mode indicator) */}
       <span
-        className={`flex h-9 w-9 items-center justify-center z-10 transition-all duration-300 ${
-          isDark ? "opacity-100 scale-105" : "opacity-35 hover:opacity-70"
-        }`}
+        className={`flex h-9 w-9 items-center justify-center z-10 transition-all duration-300 ${isDark ? "opacity-100 scale-105" : "opacity-35 hover:opacity-70"
+          }`}
       >
         <svg
           className="h-5 w-5 text-indigo-400"
@@ -70,11 +67,10 @@ function ThemeToggle({
 
       {/* Sliding Circular Thumb matching the screenshot */}
       <span
-        className={`absolute top-1 flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-300 ease-in-out shadow-md ${
-          isDark
+        className={`absolute top-1 flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-300 ease-in-out shadow-md ${isDark
             ? "translate-x-9 border border-slate-700/80 bg-slate-800/90 shadow-slate-950/70"
             : "translate-x-0 border border-slate-200 bg-white shadow-slate-400/30"
-        }`}
+          }`}
       >
         {isDark ? (
           <svg
@@ -200,9 +196,8 @@ export default function App() {
 
   return (
     <main
-      className={`min-h-screen px-4 py-12 transition-colors duration-300 sm:px-6 ${
-        isDark ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"
-      }`}
+      className={`min-h-screen px-4 py-12 transition-colors duration-300 sm:px-6 ${isDark ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"
+        }`}
     >
       <div className="mx-auto max-w-7xl">
         {/* Top bar with Dual-Icon Theme Toggle */}
@@ -230,11 +225,10 @@ export default function App() {
 
           <form
             onSubmit={handleSubmit}
-            className={`mx-auto mt-8 flex max-w-2xl gap-2 rounded-2xl border p-2 shadow-xl transition-colors ${
-              isDark
+            className={`mx-auto mt-8 flex max-w-2xl gap-2 rounded-2xl border p-2 shadow-xl transition-colors ${isDark
                 ? "border-slate-700 bg-slate-900 shadow-indigo-950/20"
                 : "border-slate-300 bg-white shadow-slate-200/70"
-            }`}
+              }`}
           >
             <input
               type="text"
@@ -243,11 +237,10 @@ export default function App() {
               placeholder="Search GitHub username..."
               autoComplete="off"
               aria-label="GitHub username"
-              className={`min-w-0 flex-1 bg-transparent px-3 py-3 text-sm outline-none sm:px-4 sm:text-base ${
-                isDark
+              className={`min-w-0 flex-1 bg-transparent px-3 py-3 text-sm outline-none sm:px-4 sm:text-base ${isDark
                   ? "text-slate-100 placeholder:text-slate-500"
                   : "text-slate-900 placeholder:text-slate-400"
-              }`}
+                }`}
             />
 
             <button
@@ -269,11 +262,10 @@ export default function App() {
         {error && (
           <div
             role="alert"
-            className={`mx-auto max-w-2xl rounded-xl border p-4 text-center ${
-              isDark
+            className={`mx-auto max-w-2xl rounded-xl border p-4 text-center ${isDark
                 ? "border-red-500/30 bg-red-500/10 text-red-300"
                 : "border-red-300 bg-red-50 text-red-700"
-            }`}
+              }`}
           >
             {error}
           </div>
@@ -304,30 +296,27 @@ export default function App() {
               {users.map((user) => (
                 <article
                   key={user.id}
-                  className={`group rounded-2xl border p-6 transition duration-200 hover:-translate-y-1 ${
-                    isDark
+                  className={`group rounded-2xl border p-6 transition duration-200 hover:-translate-y-1 ${isDark
                       ? "border-slate-800 bg-slate-900/80 hover:border-indigo-500/60 hover:shadow-xl hover:shadow-indigo-950/20 text-slate-100"
                       : "border-slate-200 bg-white shadow-md hover:border-indigo-400 hover:shadow-xl hover:shadow-indigo-100 text-slate-900"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <img
                       src={user.avatar_url}
                       alt={`${user.login}'s avatar`}
                       loading="lazy"
-                      className={`h-20 w-20 rounded-full border-2 object-cover transition ${
-                        isDark
+                      className={`h-20 w-20 rounded-full border-2 object-cover transition ${isDark
                           ? "border-slate-700 group-hover:border-indigo-400"
                           : "border-slate-200 group-hover:border-indigo-500"
-                      }`}
+                        }`}
                     />
 
                     <span
-                      className={`rounded-lg border px-3 py-1.5 text-sm font-medium ${
-                        isDark
+                      className={`rounded-lg border px-3 py-1.5 text-sm font-medium ${isDark
                           ? "border-slate-700 bg-slate-800 text-indigo-300"
                           : "border-indigo-200 bg-indigo-50 text-indigo-700"
-                      }`}
+                        }`}
                     >
                       Repositories: {user.public_repos ?? 0}
                     </span>
@@ -353,21 +342,19 @@ export default function App() {
                   </p>
 
                   <div
-                    className={`mt-6 flex items-center justify-between gap-3 border-t pt-4 ${
-                      isDark ? "border-slate-800" : "border-slate-100"
-                    }`}
+                    className={`mt-6 flex items-center justify-between gap-3 border-t pt-4 ${isDark ? "border-slate-800" : "border-slate-100"
+                      }`}
                   >
                     <a
                       href={user.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`text-sm font-semibold transition ${
-                        isDark
+                      className={`text-sm font-semibold transition ${isDark
                           ? "text-indigo-400 hover:text-indigo-300"
                           : "text-indigo-600 hover:text-indigo-700"
-                      }`}
+                        }`}
                     >
-                      View Profile ↗
+                      View Github Profile
                     </a>
                   </div>
                 </article>
@@ -383,11 +370,10 @@ export default function App() {
                   type="button"
                   disabled={currentPage === 1 || loading}
                   onClick={() => changePage(currentPage - 1)}
-                  className={`rounded-lg border px-4 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-40 transition-colors ${
-                    isDark
+                  className={`rounded-lg border px-4 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-40 transition-colors ${isDark
                       ? "border-slate-700 hover:bg-slate-800 text-slate-300"
                       : "border-slate-300 bg-white hover:bg-slate-100 text-slate-700 shadow-sm"
-                  }`}
+                    }`}
                 >
                   Previous
                 </button>
@@ -408,13 +394,12 @@ export default function App() {
                         currentPage === page ? "page" : undefined
                       }
                       onClick={() => changePage(page)}
-                      className={`min-w-10 rounded-lg px-3 py-2 text-sm font-semibold disabled:opacity-50 transition-colors ${
-                        currentPage === page
+                      className={`min-w-10 rounded-lg px-3 py-2 text-sm font-semibold disabled:opacity-50 transition-colors ${currentPage === page
                           ? "bg-indigo-600 text-white shadow-sm"
                           : isDark
-                          ? "border border-slate-700 text-slate-300 hover:bg-slate-800"
-                          : "border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 shadow-sm"
-                      }`}
+                            ? "border border-slate-700 text-slate-300 hover:bg-slate-800"
+                            : "border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 shadow-sm"
+                        }`}
                     >
                       {page}
                     </button>
@@ -427,11 +412,10 @@ export default function App() {
                     currentPage === totalPages || loading
                   }
                   onClick={() => changePage(currentPage + 1)}
-                  className={`rounded-lg border px-4 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-40 transition-colors ${
-                    isDark
+                  className={`rounded-lg border px-4 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-40 transition-colors ${isDark
                       ? "border-slate-700 hover:bg-slate-800 text-slate-300"
                       : "border-slate-300 bg-white hover:bg-slate-100 text-slate-700 shadow-sm"
-                  }`}
+                    }`}
                 >
                   Next
                 </button>
